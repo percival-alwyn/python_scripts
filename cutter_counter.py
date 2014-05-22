@@ -1,3 +1,4 @@
+# some stuff
 # cutter_counter.py
 # Made by L. Percival-Alwyn, Twitter: LP_Alwyn
 # Records: genome size, %GC and number of sites of common restriction endonucleases
