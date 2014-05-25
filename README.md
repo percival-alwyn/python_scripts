@@ -16,3 +16,9 @@ Joins fastq files together at sequences and quality scores, enabling triming fro
 Use as follows:
 python fastq_glue.py leftsidefilename.fastq rightsidefilename.fastq <-L/-R> <trim left by interger> joinedfilename.fastq
 E.g python fastq_glue.py leftsidefilename.fastq rightsidefilename.fastq -L 0 joinedfilename.fastq
+
+25MAY2014 added fast_size_dist.py
+Creates size/frequency distribution table from the fasta or fastq. Can be used to determine the size distribution of scaffolds and contig files (fasta) or can be used to calculate library size distribution or sequence length distribution from PacBio fastq files
+Use as follows:
+python fast_size_dist.py -fasta/-fastq yourfile.fasta/yourfile.fastq > yoursizedist.csv
+E.g python fast_size_dist.py -fasta yourfile.fasta > yoursizedist.csv
