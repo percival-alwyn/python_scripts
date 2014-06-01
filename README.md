@@ -22,3 +22,8 @@ Creates size/frequency distribution table from the fasta or fastq. Can be used t
 Use as follows:
 python fast_size_dist.py -fasta/-fastq yourfile.fasta/yourfile.fastq > yoursizedist.csv
 E.g python fast_size_dist.py -fasta yourfile.fasta > yoursizedist.csv
+
+01JUN2014 added Fastat.py
+Prints to screen basic statistics about .fasta files.
+Use as follows:
+python Fastat.py yourfile.fa > Basic_stats.txt
