@@ -27,3 +27,8 @@ E.g python fast_size_dist.py -fasta yourfile.fasta > yoursizedist.csv
 Prints to screen basic statistics about .fasta files.
 Use as follows:
 python Fastat.py yourfile.fa > Basic_stats.txt
+
+02JUN2014 added fastq_2_fasta.py
+Converts fastq to fasta
+Use as follows:
+python fastq_2_fasta.py filename.fastq > filename.fasta
