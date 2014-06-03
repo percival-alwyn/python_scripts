@@ -32,3 +32,12 @@ python Fastat.py yourfile.fa > Basic_stats.txt
 Converts fastq to fasta
 Use as follows:
 python fastq_2_fasta.py filename.fastq > filename.fasta
+
+03JUN2014 added av_sam_depths.py
+Calculates average depth from a depth files created using samtools depth
+Make depth files using samtools, as follows:
+samtools depth filename.sorted.bam > filename_depth.txt (see wrappers)
+
+Use av_sam_depths.py as follows:
+Make list of depth files using ls *_depth.txt > depth_list.txt
+python av_sam_depths.py depth_list.txt > average_depth.txt
