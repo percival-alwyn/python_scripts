@@ -41,3 +41,9 @@ samtools depth filename.sorted.bam > filename_depth.txt (see wrappers)
 Use av_sam_depths.py as follows:
 Make list of depth files using ls *_depth.txt > depth_list.txt
 python av_sam_depths.py depth_list.txt > average_depth.txt
+
+08JUN2014 added trim_fastq_len.py
+Trims fastq sequence and quality lengths from either end
+Use as follows:
+python trim_fastq_len.py filename.fastq <-L/-R> <trim by integer> > trimmedfilename.fastq
+
