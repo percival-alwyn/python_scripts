@@ -47,3 +47,27 @@ Trims fastq sequence and quality lengths from either end
 Use as follows:
 python trim_fastq_len.py filename.fastq <-L/-R> <trim by integer> > trimmedfilename.fastq
 
+09JUN2014 added fastq_to_bam_wapper_LSF.py
+Aligns reads to a bwa (-0.7.7) indexed reference using LSF job scheduler.
+It can be used for both single or paired end reads.
+Use as follows:
+	place fastq_to_bam_wapper_LSF.py in the same folder as fastq files
+	python fastq_to_bam_wapper_LSF.py <PE/SE> reference.fa <fastq_list> <options(BSR1XD)> <LSF queue> <optional prefix>
+Where:
+Choosing PE or SE denotes paired or single end sequencing
+fastq_list is a list of fastq files:
+	SE - a simple list (ls *.fastq > fastq_list.txt)
+	PE - list of read 1 and 2 separated by a tab:
+		ls *R1*.fastq > R1fastq_list.txt;
+		ls *R2*.fastq > R2fastq_list.txt;
+		paste R1fastq_list.txt R2fastq_list.txt > fastq_list.txt
+Options are as follows:
+	B or b - make bam
+	BS or bs - make sorted bam
+	BSX or bsx - make sorted indexed bam
+	BSXD or bsxd - make sorted indexed bam and make depth_files (_depth.txt)
+	BSRX or bsrx - make sorted indexed bam with duplicates removed
+	BSRXD or bsrxd - make sorted indexed bam with duplicates removed and make depth_files (_depth.txt)
+	BSR1X or bsr1x - make sorted indexed bam with duplicates removed of only read 1 of PE
+	BSR1XD or bsr1xd - make sorted indexed bam with duplicates removed of only read 1 of PE and make depth_files (_depth.txt)
+
