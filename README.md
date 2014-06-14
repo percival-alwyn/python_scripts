@@ -71,3 +71,9 @@ Options are as follows:
 	BSR1X or bsr1x - make sorted indexed bam with duplicates removed of only read 1 of PE
 	BSR1XD or bsr1xd - make sorted indexed bam with duplicates removed of only read 1 of PE and make depth_files (_depth.txt)
 
+14JUN2014 added random_sample_fastq.py
+Randomly samples fastqs from a file of multiple fastqs
+Use as follows:
+python random_sample_fastq.py filename.fastq <sample number integer> > random.fastq
+e.g.
+python random_sample_fastq.py filename.fastq 10000 > random.fastq
