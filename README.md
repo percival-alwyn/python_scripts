@@ -77,3 +77,10 @@ Use as follows:
 python random_sample_fastq.py filename.fastq <sample number integer> > random.fastq
 e.g.
 python random_sample_fastq.py filename.fastq 10000 > random.fastq
+
+04SEP2014 added fastasizefilter.py
+Filters FASTA formats by a specified sequence size
+Use as follows:
+python fastasizefilter.py in_file.fa out_file.fa <keep greater than size>
+e.g.
+python fastasizefilter.py in_file.fa out_file.fa 100
