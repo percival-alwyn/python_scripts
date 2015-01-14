@@ -84,3 +84,17 @@ Use as follows:
 python fastasizefilter.py in_file.fa out_file.fa <keep greater than size>
 e.g.
 python fastasizefilter.py in_file.fa out_file.fa 100
+
+14JAN2015 added vcf_depth_filter.py
+Counts the number of SNP (not indel) varient positions given a minimum lowest depth and can make the depth and SNP only filtered .vcf also.
+
+Make a multiple .vcf file with per-sample read depth (-D flag) using samtools, as follows:
+samtools mpileup -uDf REFERENCE.fa BAM_FILE_1.bam | bcftools view -bvcg - >  BCF_FILE.bcf
+bcftools view BCF_FILE.bcf | perl /tgac/software/testing/samtools/0.1.19/src/samtools-0.1.19/bcftools/vcfutils.pl varFilter -d 5 > VCF_FILE.vcf
+
+Use vcf_depth_filter.py as follows:
+python vcf_depth_filter.py VCF_FILE.vcf 10 FILTERED_VCF_FILE.vcf 
+
+or
+
+python VCF_depth_QC.py VCF_FILE.vcf 20
