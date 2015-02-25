@@ -92,9 +92,21 @@ Make a multiple .vcf file with per-sample read depth (-D flag) using samtools, a
 samtools mpileup -uDf REFERENCE.fa BAM_FILE_1.bam | bcftools view -bvcg - >  BCF_FILE.bcf
 bcftools view BCF_FILE.bcf | perl /tgac/software/testing/samtools/0.1.19/src/samtools-0.1.19/bcftools/vcfutils.pl varFilter -d 5 > VCF_FILE.vcf
 
-Use vcf_depth_filter.py as follows:
-python vcf_depth_filter.py VCF_FILE.vcf 10 FILTERED_VCF_FILE.vcf 
+Use vcf_depth_filter.py as follows: python vcf_depth_filter.py VCF_FILE.vcf 10 FILTERED_VCF_FILE.vcf 
 
 or
 
 python VCF_depth_QC.py VCF_FILE.vcf 20
+
+25FEB2015 added random_tag_rmdup.py
+Removes duplicate reads from single end reads with random tags.
+
+Takes two .fastq files:
+1) Read_1.fastq
+2) Random_tag.fastq
+
+Use as follows to remove duplicates using random tags:
+python random_tag_rmdup.py Read_1.fastq Random_tag.fastq Read_1_rmdup_output.fastq duplicate_frequency_output.txt r
+
+Use as follows to remove duplicates without using random tags:
+python random_tag_rmdup.py Read_1.fastq Random_tag.fastq Read_1_rmdup_output.fastq duplicate_frequency_output.txt
